@@ -1,5 +1,6 @@
+import BackButton from "@/app/components/BackButton";
 import { POST, Product, Products } from "@/app/lib/data";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default async function ProductsInterception({
   params,
@@ -13,7 +14,10 @@ export default async function ProductsInterception({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 ">
-      <div className="p-6 h-[250px] w-[250px] rounded-lg shadow-md bg-black/60 relative">
+      <div className="h-[250px] w-[250px] rounded-lg shadow-md bg-black/60 relative">
+        <div className="flex justify-end p-2">
+          <BackButton />
+        </div>
         <div className="flex flex-col items-center">
           <img className="h-[150px]" src={Products.thumbnail} alt="" />
           <h1>{Products.title}</h1>
